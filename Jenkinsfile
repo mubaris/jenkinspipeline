@@ -1,6 +1,13 @@
 pipeline {
     agent any
     
+    environment {
+        http_proxy = 'http://172.31.1.5:8080'
+        https_proxy = 'http://172.31.1.5:8080'
+        HTTP_PROXY = 'http://172.31.1.5:8080'
+        HTTPS_PROXY = 'http://172.31.1.5:8080'
+    }
+    
     parameters { 
          string(name: 'tomcat_dev', defaultValue: '35.166.210.154', description: 'Staging Server')
          string(name: 'tomcat_prod', defaultValue: '34.209.233.6', description: 'Production Server')
